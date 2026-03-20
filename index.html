@@ -849,15 +849,22 @@
     under Audience > Signup Forms > Embedded Forms.
     Post to that URL with the email as a form field value.
   ============================================================ -->
-  <script>
+  <script> 
     function handleSubmit(e, id) {
       e.preventDefault();
 
       const form = e.target;
       const email = form.querySelector('input[type="email"]').value;
-
-      // ── REPLACE THIS LINE with your real email service call ──
-      console.log('Waitlist signup:', email);
+      
+      fetch('https://api.beehiiv.com/v2/publications/71fc3142-5d61-4f05-9b0a-178719e8f15f/subscriptions', {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json',
+           'Authorization': 'Bearer pDCWQxPRAVxY1Ct9wOl11qWCYRL7LvusuRwUrVwjglv4ot8HAE4bwKCuDOnJy0D6'
+         },
+         body: JSON.stringify({ email: email, reactivate_existing: false })
+       })
+      
       // ─────────────────────────────────────────────────────────
 
       // Hide the submitted form
