@@ -137,6 +137,13 @@
       justify-content: space-between;
     }
 
+    .nav-image {
+      height: 40px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     /* Logo wordmark text styling */
     .logo-text {
       font-family: 'Barlow Condensed', sans-serif;
@@ -144,6 +151,12 @@
       font-weight: 800;
       letter-spacing: 0.02em;
       text-transform: uppercase;
+    }
+
+    .nav-image {
+      height: 40px;       /* controls size */
+      width: auto;
+      opacity: 0.9;
     }
 
     /* The "Cali" part of FlowCali in lime green */
@@ -617,6 +630,7 @@
   <nav>
     <div class="container">
       <div class="logo-text">Flow<span>Cali</span></div>
+      <img src="/planche.png" alt="Planche" class="nav-image" />
       <div class="nav-tag">Early Access</div>
     </div>
   </nav>
@@ -639,23 +653,7 @@
       <!-- Thin vertical lime bar on the right edge of the hero -->
       <div class="accent-bar"></div>
 
-      <!-- ── PLANCHE SILHOUETTE IMAGE ─────────────────────────────
-        TO MAKE THIS WORK:
-          1. Place your logo PNG file in the same folder as this
-             HTML file on your computer
-          2. Change "flowcali-logo.png" below to match your exact
-             filename (e.g. "flowcali-figure.png")
-
-        The mix-blend-mode: multiply CSS property hides the white
-        background so only the dark navy silhouette appears.
-        If you later export a transparent-background PNG, remove
-        mix-blend-mode from the .hero-silhouette CSS rule above.
-      ──────────────────────────────────────────────────────────── -->
-      <img
-        src="/planche.png"
-        alt="FlowCali planche silhouette"
-        class="hero-silhouette fade-up delay-1"
-      />
+      
 
       <!-- Small uppercase label above the main headline -->
       <p class="hero-eyebrow fade-up delay-2">AI-Powered Calisthenics Form Analysis</p>
